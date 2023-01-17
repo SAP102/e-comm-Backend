@@ -9,7 +9,7 @@ const {
 
 const router = express.Router()
 
-router.route("/admin/productCategory").get(authenticateUser,getAllProductCategory)
+router.route("/productCategory").get(authenticateUser,getAllProductCategory)
 
 
 router.route("/admin/productCategory/new")
