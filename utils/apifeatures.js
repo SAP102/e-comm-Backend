@@ -16,19 +16,19 @@ class ApiFeatures {
         return this;
     }
 
-        filter() {
-            const queryCopy = { ...this.queryStr }
-            const removeFileds = ["keyword", "page", "limit"]
+    filter() {
+        const queryCopy = { ...this.queryStr }
+        const removeFileds = ["keyword", "page", "limit"]
 
-            removeFileds.forEach(key => delete queryCopy[key])
-            let queryStr = JSON.stringify(queryCopy)
+        removeFileds.forEach(key => delete queryCopy[key])
+        let queryStr = JSON.stringify(queryCopy)
 
-            queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g, key => `$${key}`);
-            this.query = this.query.find(JSON.parse(queryStr))
-    
-            return this;
+        queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g, key => `$${key}`);
+        this.query = this.query.find(JSON.parse(queryStr))
 
-        }
+        return this;
+
+    }
 
     // limit() {
     //     const limit = Number(this.queryStr)

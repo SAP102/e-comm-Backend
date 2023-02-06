@@ -20,14 +20,14 @@ const createProductCategory = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
-const getAllProductCategory = catchAsyncErrors(async (req,res, next )=>{
+const getAllProductCategory = catchAsyncErrors(async (req, res, next) => {
 
     const AllproductCategory = await ProductCategory.find()
 
     let filteredProductsCount = AllproductCategory.length;
 
     res.status(StatusCodes.OK).json({
-        success: true, 
+        success: true,
         AllproductCategory,
         filteredProductsCount,
     })

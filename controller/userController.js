@@ -93,7 +93,7 @@ const frogotPassword = catchAsyncErrors(async (req, res, next) => {
     const message = `Your password reset token is :- \n\n ${resetPasswordUrl}`
 
     const data = await ejs.renderFile(
-        path.join(__dirname, "../views/forgotPassEmail.ejs"), { email: user.email,restPass: resetPasswordUrl }
+        path.join(__dirname, "../views/forgotPassEmail.ejs"), { email: user.email, restPass: resetPasswordUrl }
     );
     try {
         await sendEmail({

@@ -9,13 +9,13 @@ const {
 
 const router = express.Router()
 
-router.route("/productCategory").get(authenticateUser,getAllProductCategory)
+router.route("/productCategory").get(authenticateUser, getAllProductCategory)
 
 
 router.route("/admin/productCategory/new")
-    .post(authenticateUser,authorizePermission("admin"), createProductCategory)
+    .post(authenticateUser, authorizePermission("admin"), createProductCategory)
 
-    router
+router
     .route("/admin/productCategory/:id")
     .put(authenticateUser, authorizePermission("admin"), updateProductCategory)
     .delete(authenticateUser, authorizePermission("admin"), deleteProductCtegory)

@@ -12,7 +12,7 @@ module.exports = (err, req, res, next) => {
         err = new ErrorHander(message, 404);
     }
 
-    if(err.code && err.code === 11000){
+    if (err.code && err.code === 11000) {
         const message = `Duplicate value entered for ${Object.keys(err.keyValue)} field, please choose another value`
         err = new ErrorHander(message, 400);
     }

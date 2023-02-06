@@ -5,9 +5,9 @@ const catchAsyncErrors = require("../errors/catchAsyncErrors")
 const { StatusCodes } = require("http-status-codes");
 
 const newOrder = catchAsyncErrors(async (req, res, next) => {
-    if(req.user.role === "admin"){
+    if (req.user.role === "admin") {
         return next(new ErrorHander("Order create only user", 404))
-    }else{
+    } else {
         const { shippingInfo, orderItems, paymentInfo, itemsPrice, taxPrice, shippingPrice, totalPrice } = req.body;
         const orders = await Order.create({
             shippingInfo,
@@ -27,7 +27,7 @@ const newOrder = catchAsyncErrors(async (req, res, next) => {
         });
     }
 
-  
+
 });
 
 // get singelOrder 

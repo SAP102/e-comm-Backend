@@ -9,7 +9,7 @@ const connectDatabase = () => {
         // useFindAndModify: false
     }).then(() => {
         console.log("Connection is Successful")
-    }).catch((err)=> console.log(`Somthing wont wrong`))
+    }).catch((err) => console.log(`Somthing wont wrong`))
 }
 
 module.exports = connectDatabase

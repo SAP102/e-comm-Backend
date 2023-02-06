@@ -20,8 +20,8 @@ const {
 
 const router = express.Router()
 
-router.route("/products").get( getAllProducts)
-router.route("/productslimit").get( getAllProductslimit)
+router.route("/products").get(getAllProducts)
+router.route("/productslimit").get(getAllProductslimit)
 
 router.route("/admin/products/new")
     .post(authenticateUser, authorizePermission("admin"), createProduct)
@@ -37,11 +37,11 @@ router
 router
     .route("/productfindbcategory/:id").get(getProductCategoryDetails)
 
-router.route("/review").put(authenticateUser ,creatProductReview)
+router.route("/review").put(authenticateUser, creatProductReview)
 
 router
     .route("/review")
     .get(getAllReview)
-    .delete(authenticateUser,deleteReview)
+    .delete(authenticateUser, deleteReview)
 
 module.exports = router
